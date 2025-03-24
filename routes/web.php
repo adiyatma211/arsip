@@ -1,14 +1,20 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('auth.login');
 });
 
+Route::get('/dash',[PagesController::class,'Dashboard'])->name('dash');
+Route::get('/ManageAktif',[PagesController::class,'ManageAktif'])->name('NasabahAktif');
+
+
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('layouts.base');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
