@@ -15,4 +15,17 @@ class PagesController extends Controller
     {
         return view('ManajemenAktif.v_manageAktif');
     }
+    public function ManageLunas() 
+    {
+        return view('ManajemenLunas.v_manageLunas');
+    }
+    public function ManageMusnah() 
+    {
+        return view('ManajemenMusnah.v_manageMusnah');
+    }
+    public function PinjamDokumen() 
+    {
+        return view('ManajemenPinjam.v_pinjam');
+    }
+    
 }
